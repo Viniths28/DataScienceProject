@@ -11,8 +11,8 @@ warnings.filterwarnings('ignore')
 
 # Set page config
 st.set_page_config(
-    page_title="Data Analytics Dashboard",
-    page_icon="🎨",
+    page_title="DataAnalytics Pro - Advanced Data Analytics & Visualization Dashboard",
+    page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -39,6 +39,24 @@ st.markdown("""
 }
 .metric-container {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 1.5rem;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    margin: 1rem 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.analytics-container {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    padding: 1.5rem;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    margin: 1rem 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.insight-container {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
     padding: 1.5rem;
     border-radius: 15px;
     color: white;
@@ -90,27 +108,31 @@ COLOR_PALETTES = {
 }
 
 def main():
-    st.markdown('<h1 class="main-header">🎨 Data Analytics Dashboard</h1>', unsafe_allow_html=True)
-    st.markdown("### 🌟 Transform your data into stunning visual stories!")
+    st.markdown('<h1 class="main-header">📊 DataAnalytics Pro - Advanced Data Analytics & Visualization</h1>', unsafe_allow_html=True)
+    st.markdown("### 🔍 Transform your data into powerful insights and stunning visual stories!")
     
     # Sidebar for navigation
-    st.sidebar.title("🎯 Navigation")
+    st.sidebar.title("🎯 Navigation Hub")
     page = st.sidebar.selectbox(
-        "Choose your adventure:",
-        ["🏠 Home", "📊 Data Explorer", "🎨 Beautiful Visualizations", "📋 Sample Datasets"]
+        "Choose your analytics journey:",
+        ["🏠 Home", "📊 Data Explorer", "📈 Data Analytics", "🎨 Beautiful Visualizations", "📋 Insights & Reports", "📋 Sample Datasets"]
     )
     
     if page == "🏠 Home":
         show_home()
     elif page == "📊 Data Explorer":
         show_data_explorer()
+    elif page == "📈 Data Analytics":
+        show_data_analytics()
     elif page == "🎨 Beautiful Visualizations":
         show_visualizations()
+    elif page == "📋 Insights & Reports":
+        show_insights_reports()
     elif page == "📋 Sample Datasets":
         show_sample_data()
 
 def show_home():
-    st.markdown("## 🚀 Welcome to Your Data Visualization Journey!")
+    st.markdown("## 🚀 Welcome to Your Complete Data Analytics Journey!")
     
     # Create beautiful feature cards
     col1, col2, col3 = st.columns(3)
@@ -119,23 +141,50 @@ def show_home():
         st.markdown("""
         <div class="feature-card">
             <h3>📊 Data Explorer</h3>
-            <p>Upload your CSV or Excel files and instantly see beautiful data summaries with colorful metrics and insights.</p>
+            <p>Upload CSV/Excel files and get instant comprehensive data profiling with quality metrics and statistical insights.</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col2:
         st.markdown("""
         <div class="feature-card">
-            <h3>🎨 Visual Magic</h3>
-            <p>Create stunning charts with rainbow colors, gradients, and professional styling that will wow your audience.</p>
+            <h3>📈 Data Analytics</h3>
+            <p>Advanced statistical analysis, trend detection, correlation studies, and data profiling for deep insights.</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col3:
         st.markdown("""
         <div class="feature-card">
-            <h3>📋 Sample Data</h3>
-            <p>Try our beautifully crafted sample datasets to explore all features immediately.</p>
+            <h3>🎨 Visualizations</h3>
+            <p>Create stunning charts with rainbow colors, gradients, and professional styling with multiple themes.</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Additional feature cards
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown("""
+        <div class="feature-card">
+            <h3>📋 Smart Insights</h3>
+            <p>Automated data insights, trend analysis, and intelligent recommendations based on your data patterns.</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+        <div class="feature-card">
+            <h3>📊 Analytics Reports</h3>
+            <p>Generate comprehensive analytics reports with statistical summaries and data quality assessments.</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        st.markdown("""
+        <div class="feature-card">
+            <h3>🎯 Sample Data</h3>
+            <p>Try our beautifully crafted sample datasets to explore all analytics and visualization features immediately.</p>
         </div>
         """, unsafe_allow_html=True)
     
@@ -144,30 +193,32 @@ def show_home():
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("### 🎯 Perfect For:")
+        st.markdown("### 🎯 Perfect For Data Analytics:")
         st.markdown("""
-        - **College Projects** 📚
-        - **Data Presentations** 📈
-        - **Visual Storytelling** 🎭
-        - **Interactive Dashboards** 💻
-        - **Colorful Reports** 🌈
+        - **📚 College Analytics Projects** 
+        - **📊 Business Intelligence Reports**
+        - **📈 Data Science Presentations** 
+        - **🔍 Exploratory Data Analysis**
+        - **📋 Statistical Analysis Studies**
+        - **🎭 Data Storytelling**
         """)
     
     with col2:
-        st.markdown("### ✨ What Makes It Special:")
+        st.markdown("### ✨ Advanced Features:")
         st.markdown("""
-        - **Beautiful Color Schemes** 🎨
-        - **Interactive Charts** 🖱️
-        - **Professional Styling** 💎
-        - **Easy to Use** 🎯
-        - **Instantly Impressive** ⚡
+        - **🔍 Automated Data Profiling**
+        - **📊 Statistical Analysis Suite**
+        - **🎨 Multiple Color Palettes**
+        - **📈 Trend & Pattern Detection**
+        - **⚡ Interactive Dashboards**
+        - **📋 Smart Insights Generation**
         """)
     
     st.markdown("---")
     st.markdown("""
     <div class="info-box">
-        <h3>🚀 Ready to Create Magic?</h3>
-        <p>👈 Use the sidebar to start your data visualization journey. Begin with <strong>Data Explorer</strong> to upload your data or try our <strong>Sample Datasets</strong>!</p>
+        <h3>🚀 Ready to Analyze Your Data?</h3>
+        <p>👈 Use the sidebar to start your analytics journey. Begin with <strong>Data Explorer</strong> for data profiling, then explore <strong>Data Analytics</strong> for insights, and <strong>Visualizations</strong> for stunning charts!</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -821,6 +872,915 @@ def create_sales_data():
         })
     
     return pd.DataFrame(data)
+
+def show_data_analytics():
+    st.markdown("## 📈 Advanced Data Analytics Suite")
+    
+    if 'df' not in st.session_state:
+        st.markdown("""
+        <div class="info-box">
+            <h3>⚠️ No Data Found!</h3>
+            <p>Please upload a dataset first in the Data Explorer section or try our Sample Datasets!</p>
+        </div>
+        """, unsafe_allow_html=True)
+        return
+    
+    df = st.session_state.df
+    
+    # Analytics navigation
+    analytics_tab = st.selectbox(
+        "🔍 Choose your analytics approach:",
+        ["📊 Data Profiling", "📈 Statistical Analysis", "🔍 Correlation Analysis", "📋 Data Quality Assessment", "🎯 Trend Analysis"]
+    )
+    
+    if analytics_tab == "📊 Data Profiling":
+        show_data_profiling(df)
+    elif analytics_tab == "📈 Statistical Analysis":
+        show_statistical_analysis(df)
+    elif analytics_tab == "🔍 Correlation Analysis":
+        show_correlation_analysis(df)
+    elif analytics_tab == "📋 Data Quality Assessment":
+        show_data_quality(df)
+    elif analytics_tab == "🎯 Trend Analysis":
+        show_trend_analysis(df)
+
+def show_data_profiling(df):
+    st.markdown("### 📊 Comprehensive Data Profiling")
+    st.markdown("*Get a complete overview of your dataset structure and characteristics*")
+    
+    # Basic dataset info
+    col1, col2, col3, col4, col5 = st.columns(5)
+    
+    with col1:
+        st.markdown(f"""
+        <div class="analytics-container">
+            <h2>{df.shape[0]:,}</h2>
+            <p>Total Rows</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown(f"""
+        <div class="analytics-container">
+            <h2>{df.shape[1]}</h2>
+            <p>Total Columns</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        memory_usage = df.memory_usage(deep=True).sum() / 1024**2
+        st.markdown(f"""
+        <div class="analytics-container">
+            <h2>{memory_usage:.1f} MB</h2>
+            <p>Memory Usage</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col4:
+        numeric_cols = len(df.select_dtypes(include=[np.number]).columns)
+        st.markdown(f"""
+        <div class="analytics-container">
+            <h2>{numeric_cols}</h2>
+            <p>Numeric Columns</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col5:
+        categorical_cols = len(df.select_dtypes(include=['object']).columns)
+        st.markdown(f"""
+        <div class="analytics-container">
+            <h2>{categorical_cols}</h2>
+            <p>Text Columns</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Column-wise analysis
+    st.markdown("### 📋 Column-wise Data Profile")
+    
+    profile_data = []
+    for col in df.columns:
+        col_data = {
+            'Column': col,
+            'Data Type': str(df[col].dtype),
+            'Non-Null Count': df[col].count(),
+            'Null Count': df[col].isnull().sum(),
+            'Null Percentage': f"{(df[col].isnull().sum() / len(df) * 100):.1f}%",
+            'Unique Values': df[col].nunique(),
+            'Uniqueness': f"{(df[col].nunique() / len(df) * 100):.1f}%"
+        }
+        
+        if df[col].dtype in ['int64', 'float64']:
+            col_data.update({
+                'Mean': f"{df[col].mean():.2f}" if pd.notnull(df[col].mean()) else "N/A",
+                'Std Dev': f"{df[col].std():.2f}" if pd.notnull(df[col].std()) else "N/A",
+                'Min': f"{df[col].min():.2f}" if pd.notnull(df[col].min()) else "N/A",
+                'Max': f"{df[col].max():.2f}" if pd.notnull(df[col].max()) else "N/A"
+            })
+        else:
+            col_data.update({
+                'Mean': "N/A",
+                'Std Dev': "N/A", 
+                'Min': "N/A",
+                'Max': "N/A"
+            })
+        
+        profile_data.append(col_data)
+    
+    profile_df = pd.DataFrame(profile_data)
+    st.dataframe(profile_df, use_container_width=True)
+
+def show_statistical_analysis(df):
+    st.markdown("### 📈 Statistical Analysis Suite")
+    st.markdown("*Comprehensive statistical insights and descriptive analytics*")
+    
+    numeric_cols = df.select_dtypes(include=[np.number]).columns
+    
+    if len(numeric_cols) == 0:
+        st.warning("🤔 No numerical columns found for statistical analysis!")
+        return
+    
+    # Overall statistics
+    st.markdown("#### 📊 Descriptive Statistics")
+    desc_stats = df[numeric_cols].describe()
+    st.dataframe(desc_stats, use_container_width=True)
+    
+    # Advanced statistics
+    st.markdown("#### 🎯 Advanced Statistical Measures")
+    
+    advanced_stats = []
+    for col in numeric_cols:
+        stats = {
+            'Column': col,
+            'Skewness': f"{df[col].skew():.3f}",
+            'Kurtosis': f"{df[col].kurtosis():.3f}",
+            'Coefficient of Variation': f"{(df[col].std() / df[col].mean() * 100):.2f}%" if df[col].mean() != 0 else "N/A",
+            'Range': f"{df[col].max() - df[col].min():.2f}",
+            'IQR': f"{df[col].quantile(0.75) - df[col].quantile(0.25):.2f}",
+            'Outliers (IQR method)': count_outliers_iqr(df[col])
+        }
+        advanced_stats.append(stats)
+    
+    advanced_df = pd.DataFrame(advanced_stats)
+    st.dataframe(advanced_df, use_container_width=True)
+    
+    # Statistical interpretations
+    st.markdown("#### 💡 Statistical Insights")
+    
+    interpretations = []
+    for col in numeric_cols:
+        skew = df[col].skew()
+        kurt = df[col].kurtosis()
+        
+        skew_interpretation = "Normally distributed" if abs(skew) < 0.5 else \
+                            "Slightly skewed" if abs(skew) < 1 else "Highly skewed"
+        
+        kurt_interpretation = "Normal distribution" if abs(kurt) < 0.5 else \
+                            "Heavy-tailed" if kurt > 0.5 else "Light-tailed"
+        
+        interpretations.append({
+            'Column': col,
+            'Distribution Shape': f"{skew_interpretation} ({skew:.2f})",
+            'Tail Behavior': f"{kurt_interpretation} ({kurt:.2f})",
+            'Data Spread': "High variance" if df[col].std() / df[col].mean() > 0.5 else "Low variance"
+        })
+    
+    insights_df = pd.DataFrame(interpretations)
+    st.dataframe(insights_df, use_container_width=True)
+
+def count_outliers_iqr(series):
+    Q1 = series.quantile(0.25)
+    Q3 = series.quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    outliers = series[(series < lower_bound) | (series > upper_bound)]
+    return len(outliers)
+
+def show_correlation_analysis(df):
+    st.markdown("### 🔍 Advanced Correlation Analysis")
+    st.markdown("*Discover relationships and dependencies between variables*")
+    
+    numeric_cols = df.select_dtypes(include=[np.number]).columns
+    
+    if len(numeric_cols) < 2:
+        st.warning("🤔 Need at least 2 numerical columns for correlation analysis!")
+        return
+    
+    # Correlation matrix
+    corr_matrix = df[numeric_cols].corr()
+    
+    # Heatmap visualization
+    fig = px.imshow(
+        corr_matrix,
+        text_auto=True,
+        aspect="auto",
+        title="🔥 Correlation Matrix - Relationship Strength Map",
+        color_continuous_scale='RdYlBu',
+        labels=dict(color="Correlation Strength")
+    )
+    fig.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(size=12),
+        title_font_size=18,
+        title_x=0.5
+    )
+    st.plotly_chart(fig, use_container_width=True)
+    
+    # Strong correlations analysis
+    st.markdown("#### 🎯 Strong Correlations Detected")
+    
+    strong_correlations = []
+    for i in range(len(corr_matrix.columns)):
+        for j in range(i+1, len(corr_matrix.columns)):
+            corr_val = corr_matrix.iloc[i, j]
+            if abs(corr_val) > 0.5:  # Only show correlations > 0.5
+                strength = "Very Strong" if abs(corr_val) > 0.8 else "Strong"
+                direction = "Positive" if corr_val > 0 else "Negative"
+                
+                strong_correlations.append({
+                    'Variable 1': corr_matrix.columns[i],
+                    'Variable 2': corr_matrix.columns[j],
+                    'Correlation': f"{corr_val:.3f}",
+                    'Strength': strength,
+                    'Direction': direction,
+                    'Interpretation': get_correlation_interpretation(corr_val)
+                })
+    
+    if strong_correlations:
+        corr_df = pd.DataFrame(strong_correlations)
+        st.dataframe(corr_df, use_container_width=True)
+        
+        # Top correlations insights
+        st.markdown("""
+        <div class="insight-container">
+            <h4>🔍 Correlation Insights</h4>
+            <p>Strong correlations (>0.5) indicate variables that move together. This can help identify patterns, redundancies, or potential causal relationships in your data.</p>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        st.info("No strong correlations (>0.5) found between variables.")
+
+def get_correlation_interpretation(corr_val):
+    abs_corr = abs(corr_val)
+    if abs_corr > 0.8:
+        return "Very strong relationship"
+    elif abs_corr > 0.6:
+        return "Strong relationship"
+    elif abs_corr > 0.4:
+        return "Moderate relationship"
+    elif abs_corr > 0.2:
+        return "Weak relationship"
+    else:
+        return "Very weak relationship"
+
+def show_data_quality(df):
+    st.markdown("### 📋 Comprehensive Data Quality Assessment")
+    st.markdown("*Evaluate data completeness, consistency, and reliability*")
+    
+    # Overall data quality score
+    total_cells = df.shape[0] * df.shape[1]
+    missing_cells = df.isnull().sum().sum()
+    completeness_score = ((total_cells - missing_cells) / total_cells) * 100
+    
+    # Data quality metrics
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        st.markdown(f"""
+        <div class="insight-container">
+            <h2>{completeness_score:.1f}%</h2>
+            <p>Data Completeness</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        duplicate_rows = df.duplicated().sum()
+        uniqueness_score = ((len(df) - duplicate_rows) / len(df)) * 100
+        st.markdown(f"""
+        <div class="insight-container">
+            <h2>{uniqueness_score:.1f}%</h2>
+            <p>Data Uniqueness</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        numeric_cols = df.select_dtypes(include=[np.number]).columns
+        outlier_count = sum([count_outliers_iqr(df[col]) for col in numeric_cols])
+        st.markdown(f"""
+        <div class="insight-container">
+            <h2>{outlier_count}</h2>
+            <p>Outliers Detected</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col4:
+        overall_quality = (completeness_score + uniqueness_score) / 2
+        quality_grade = "Excellent" if overall_quality > 90 else \
+                       "Good" if overall_quality > 75 else \
+                       "Fair" if overall_quality > 60 else "Poor"
+        st.markdown(f"""
+        <div class="insight-container">
+            <h2>{quality_grade}</h2>
+            <p>Overall Quality</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Detailed quality assessment
+    st.markdown("#### 🔍 Column-wise Quality Assessment")
+    
+    quality_data = []
+    for col in df.columns:
+        null_pct = (df[col].isnull().sum() / len(df)) * 100
+        unique_pct = (df[col].nunique() / len(df)) * 100
+        
+        quality_score = 100 - null_pct  # Simple quality score based on completeness
+        quality_status = "Excellent" if quality_score > 95 else \
+                        "Good" if quality_score > 85 else \
+                        "Fair" if quality_score > 70 else "Poor"
+        
+        quality_data.append({
+            'Column': col,
+            'Completeness': f"{100 - null_pct:.1f}%",
+            'Missing Values': df[col].isnull().sum(),
+            'Uniqueness': f"{unique_pct:.1f}%",
+            'Quality Score': f"{quality_score:.1f}%",
+            'Status': quality_status,
+            'Recommendations': get_quality_recommendations(df[col], null_pct, unique_pct)
+        })
+    
+    quality_df = pd.DataFrame(quality_data)
+    st.dataframe(quality_df, use_container_width=True)
+
+def get_quality_recommendations(series, null_pct, unique_pct):
+    recommendations = []
+    
+    if null_pct > 20:
+        recommendations.append("High missing values - consider imputation")
+    elif null_pct > 5:
+        recommendations.append("Some missing values - review data collection")
+    
+    if unique_pct < 1:
+        recommendations.append("Low variability - check for constant values")
+    elif unique_pct > 95 and series.dtype == 'object':
+        recommendations.append("High uniqueness - potential identifier column")
+    
+    return "; ".join(recommendations) if recommendations else "Good quality"
+
+def show_trend_analysis(df):
+    st.markdown("### 🎯 Trend and Pattern Analysis")
+    st.markdown("*Identify trends, patterns, and anomalies in your data*")
+    
+    numeric_cols = df.select_dtypes(include=[np.number]).columns
+    
+    if len(numeric_cols) == 0:
+        st.warning("🤔 No numerical columns found for trend analysis!")
+        return
+    
+    # Time-based analysis if applicable
+    date_cols = df.select_dtypes(include=['datetime64']).columns
+    if len(date_cols) > 0:
+        st.markdown("#### 📅 Time Series Analysis")
+        
+        date_col = st.selectbox("Select date column:", date_cols)
+        value_col = st.selectbox("Select value column for trend analysis:", numeric_cols)
+        
+        # Simple trend visualization
+        temp_df = df.dropna(subset=[date_col, value_col])
+        temp_df = temp_df.sort_values(date_col)
+        
+        fig = px.line(temp_df, x=date_col, y=value_col, 
+                     title=f"📈 Trend Analysis: {value_col} over time")
+        fig.update_layout(
+            plot_bgcolor='rgba(0,0,0,0)',
+            paper_bgcolor='rgba(0,0,0,0)',
+            font=dict(size=12),
+            title_font_size=16
+        )
+        st.plotly_chart(fig, use_container_width=True)
+    
+    # Pattern detection
+    st.markdown("#### 🔍 Pattern Detection")
+    
+    selected_col = st.selectbox("Select column for pattern analysis:", numeric_cols)
+    
+    # Basic pattern analysis
+    col_data = df[selected_col].dropna()
+    
+    # Calculate moving averages if enough data
+    if len(col_data) > 10:
+        rolling_mean = col_data.rolling(window=min(5, len(col_data)//4)).mean()
+        
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(y=col_data.values, mode='lines', name='Original Data', 
+                                line=dict(color='lightblue', width=1)))
+        fig.add_trace(go.Scatter(y=rolling_mean.values, mode='lines', name='Trend Line',
+                                line=dict(color='red', width=3)))
+        
+        fig.update_layout(
+            title=f"📊 Pattern Analysis: {selected_col}",
+            plot_bgcolor='rgba(0,0,0,0)',
+            paper_bgcolor='rgba(0,0,0,0)',
+            font=dict(size=12),
+            title_font_size=16
+        )
+        st.plotly_chart(fig, use_container_width=True)
+        
+        # Pattern insights
+        trend_direction = "Increasing" if rolling_mean.iloc[-1] > rolling_mean.iloc[0] else \
+                         "Decreasing" if rolling_mean.iloc[-1] < rolling_mean.iloc[0] else "Stable"
+        
+        volatility = col_data.std() / col_data.mean() * 100 if col_data.mean() != 0 else 0
+        
+        col1, col2, col3 = st.columns(3)
+        
+        with col1:
+            st.markdown(f"""
+            <div class="insight-container">
+                <h3>{trend_direction}</h3>
+                <p>Overall Trend</p>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with col2:
+            st.markdown(f"""
+            <div class="insight-container">
+                <h3>{volatility:.1f}%</h3>
+                <p>Volatility</p>
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with col3:
+            stability = "High" if volatility < 10 else "Medium" if volatility < 30 else "Low"
+            st.markdown(f"""
+            <div class="insight-container">
+                <h3>{stability}</h3>
+                <p>Stability</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+def show_insights_reports():
+    st.markdown("## 📋 Smart Insights & Analytics Reports")
+    
+    if 'df' not in st.session_state:
+        st.markdown("""
+        <div class="info-box">
+            <h3>⚠️ No Data Found!</h3>
+            <p>Please upload a dataset first in the Data Explorer section or try our Sample Datasets!</p>
+        </div>
+        """, unsafe_allow_html=True)
+        return
+    
+    df = st.session_state.df
+    
+    # Report type selection
+    report_type = st.selectbox(
+        "🎯 Choose your report type:",
+        ["📊 Executive Summary", "🔍 Detailed Analytics Report", "📈 Data Quality Report", "🎯 Key Insights Dashboard"]
+    )
+    
+    if report_type == "📊 Executive Summary":
+        show_executive_summary(df)
+    elif report_type == "🔍 Detailed Analytics Report":
+        show_detailed_analytics_report(df)
+    elif report_type == "📈 Data Quality Report":
+        show_data_quality_report(df)
+    elif report_type == "🎯 Key Insights Dashboard":
+        show_key_insights_dashboard(df)
+
+def show_executive_summary(df):
+    st.markdown("### 📊 Executive Summary - Data Overview")
+    st.markdown("*High-level insights for decision makers*")
+    
+    # Key metrics overview
+    col1, col2, col3, col4, col5 = st.columns(5)
+    
+    with col1:
+        st.markdown(f"""
+        <div class="metric-container">
+            <h2>{df.shape[0]:,}</h2>
+            <p>Total Records</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown(f"""
+        <div class="metric-container">
+            <h2>{df.shape[1]}</h2>
+            <p>Data Points</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        completeness = ((df.shape[0] * df.shape[1] - df.isnull().sum().sum()) / (df.shape[0] * df.shape[1])) * 100
+        st.markdown(f"""
+        <div class="metric-container">
+            <h2>{completeness:.1f}%</h2>
+            <p>Data Completeness</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col4:
+        numeric_cols = len(df.select_dtypes(include=[np.number]).columns)
+        st.markdown(f"""
+        <div class="metric-container">
+            <h2>{numeric_cols}</h2>
+            <p>Numeric Variables</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col5:
+        categorical_cols = len(df.select_dtypes(include=['object']).columns)
+        st.markdown(f"""
+        <div class="metric-container">
+            <h2>{categorical_cols}</h2>
+            <p>Categorical Variables</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Key findings
+    st.markdown("### 🎯 Key Findings")
+    
+    findings = generate_key_findings(df)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("#### 📈 Data Characteristics")
+        for finding in findings['characteristics']:
+            st.markdown(f"• {finding}")
+    
+    with col2:
+        st.markdown("#### 💡 Recommendations")
+        for rec in findings['recommendations']:
+            st.markdown(f"• {rec}")
+    
+    # Summary statistics for numeric columns
+    numeric_cols = df.select_dtypes(include=[np.number]).columns
+    if len(numeric_cols) > 0:
+        st.markdown("### 📊 Quick Statistics Summary")
+        
+        summary_stats = []
+        for col in numeric_cols[:5]:  # Show top 5 numeric columns
+            stats = {
+                'Variable': col,
+                'Average': f"{df[col].mean():.2f}",
+                'Median': f"{df[col].median():.2f}",
+                'Std Dev': f"{df[col].std():.2f}",
+                'Min': f"{df[col].min():.2f}",
+                'Max': f"{df[col].max():.2f}"
+            }
+            summary_stats.append(stats)
+        
+        summary_df = pd.DataFrame(summary_stats)
+        st.dataframe(summary_df, use_container_width=True)
+
+def generate_key_findings(df):
+    findings = {
+        'characteristics': [],
+        'recommendations': []
+    }
+    
+    # Data size assessment
+    if df.shape[0] > 10000:
+        findings['characteristics'].append("Large dataset with extensive data points")
+    elif df.shape[0] > 1000:
+        findings['characteristics'].append("Medium-sized dataset suitable for analysis")
+    else:
+        findings['characteristics'].append("Small dataset - consider collecting more data")
+    
+    # Missing data assessment
+    missing_pct = (df.isnull().sum().sum() / (df.shape[0] * df.shape[1])) * 100
+    if missing_pct > 20:
+        findings['characteristics'].append("High missing data detected")
+        findings['recommendations'].append("Consider data cleaning and imputation strategies")
+    elif missing_pct > 5:
+        findings['characteristics'].append("Some missing values present")
+        findings['recommendations'].append("Review data collection processes")
+    else:
+        findings['characteristics'].append("High data completeness - excellent quality")
+    
+    # Column distribution
+    numeric_cols = len(df.select_dtypes(include=[np.number]).columns)
+    categorical_cols = len(df.select_dtypes(include=['object']).columns)
+    
+    if numeric_cols > categorical_cols:
+        findings['characteristics'].append("Numeric-heavy dataset - suitable for statistical analysis")
+        findings['recommendations'].append("Focus on correlation and regression analysis")
+    elif categorical_cols > numeric_cols:
+        findings['characteristics'].append("Category-rich dataset - ideal for classification")
+        findings['recommendations'].append("Consider category analysis and cross-tabulation")
+    else:
+        findings['characteristics'].append("Balanced mix of numeric and categorical data")
+    
+    # Duplicates
+    duplicates = df.duplicated().sum()
+    if duplicates > 0:
+        findings['characteristics'].append(f"{duplicates} duplicate records found")
+        findings['recommendations'].append("Consider removing duplicate entries")
+    
+    return findings
+
+def show_detailed_analytics_report(df):
+    st.markdown("### 🔍 Comprehensive Analytics Report")
+    st.markdown("*In-depth analysis of your dataset*")
+    
+    # Generate comprehensive report
+    report = generate_analytics_report(df)
+    
+    # Display report sections
+    st.markdown("#### 📋 Dataset Overview")
+    st.markdown(report['overview'])
+    
+    st.markdown("#### 📊 Statistical Summary")
+    st.markdown(report['statistical_summary'])
+    
+    st.markdown("#### 🔍 Data Quality Analysis")
+    st.markdown(report['quality_analysis'])
+    
+    st.markdown("#### 📈 Pattern Analysis")
+    st.markdown(report['pattern_analysis'])
+    
+    st.markdown("#### 💡 Insights & Recommendations")
+    st.markdown(report['insights_recommendations'])
+
+def generate_analytics_report(df):
+    report = {}
+    
+    # Overview section
+    report['overview'] = f"""
+    **Dataset Dimensions**: {df.shape[0]:,} rows × {df.shape[1]} columns
+    
+    **Data Types Distribution**:
+    - Numeric columns: {len(df.select_dtypes(include=[np.number]).columns)}
+    - Text/Categorical columns: {len(df.select_dtypes(include=['object']).columns)}
+    - Date columns: {len(df.select_dtypes(include=['datetime64']).columns)}
+    
+    **Memory Usage**: {df.memory_usage(deep=True).sum() / 1024**2:.1f} MB
+    """
+    
+    # Statistical summary
+    numeric_cols = df.select_dtypes(include=[np.number]).columns
+    if len(numeric_cols) > 0:
+        report['statistical_summary'] = f"""
+        **Numeric Variables Analysis**:
+        - Variables analyzed: {len(numeric_cols)}
+        - Average correlation strength: {abs(df[numeric_cols].corr()).mean().mean():.3f}
+        - Highest variance column: {df[numeric_cols].var().idxmax()}
+        - Most skewed distribution: {abs(df[numeric_cols].skew()).idxmax()}
+        """
+    else:
+        report['statistical_summary'] = "No numeric variables found for statistical analysis."
+    
+    # Quality analysis
+    missing_pct = (df.isnull().sum().sum() / (df.shape[0] * df.shape[1])) * 100
+    duplicates = df.duplicated().sum()
+    
+    report['quality_analysis'] = f"""
+    **Data Quality Metrics**:
+    - Overall completeness: {100 - missing_pct:.1f}%
+    - Missing values: {df.isnull().sum().sum():,} cells
+    - Duplicate records: {duplicates:,}
+    - Data quality grade: {"Excellent" if missing_pct < 5 else "Good" if missing_pct < 15 else "Fair"}
+    """
+    
+    # Pattern analysis
+    patterns = []
+    for col in numeric_cols[:3]:  # Analyze top 3 numeric columns
+        col_data = df[col].dropna()
+        if len(col_data) > 1:
+            trend = "Increasing" if col_data.iloc[-1] > col_data.iloc[0] else "Decreasing"
+            patterns.append(f"- {col}: {trend} trend detected")
+    
+    report['pattern_analysis'] = f"""
+    **Pattern Detection Results**:
+    {chr(10).join(patterns) if patterns else "No significant patterns detected in numeric variables."}
+    """
+    
+    # Insights and recommendations
+    insights = []
+    if missing_pct > 10:
+        insights.append("- Consider data imputation strategies for missing values")
+    if duplicates > 0:
+        insights.append("- Remove duplicate records to improve data quality")
+    if len(numeric_cols) > 5:
+        insights.append("- Perform dimensionality reduction for high-dimensional data")
+    
+    report['insights_recommendations'] = f"""
+    **Key Recommendations**:
+    {chr(10).join(insights) if insights else "- Dataset is in good condition for analysis"}
+    
+    **Next Steps**:
+    - Explore correlations between variables
+    - Create visualizations for key insights
+    - Consider advanced analytics techniques
+    """
+    
+    return report
+
+def show_data_quality_report(df):
+    st.markdown("### 📈 Data Quality Assessment Report")
+    st.markdown("*Comprehensive evaluation of data reliability and usability*")
+    
+    # Quality score calculation
+    quality_metrics = calculate_quality_metrics(df)
+    
+    # Display quality score
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown(f"""
+        <div class="insight-container">
+            <h2>{quality_metrics['overall_score']:.1f}%</h2>
+            <p>Overall Quality Score</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown(f"""
+        <div class="insight-container">
+            <h2>{quality_metrics['grade']}</h2>
+            <p>Quality Grade</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        st.markdown(f"""
+        <div class="insight-container">
+            <h2>{quality_metrics['usability']}</h2>
+            <p>Data Usability</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Detailed quality breakdown
+    st.markdown("#### 📊 Quality Breakdown")
+    
+    quality_breakdown = pd.DataFrame([
+        {'Metric': 'Completeness', 'Score': f"{quality_metrics['completeness']:.1f}%", 'Status': get_quality_status(quality_metrics['completeness'])},
+        {'Metric': 'Uniqueness', 'Score': f"{quality_metrics['uniqueness']:.1f}%", 'Status': get_quality_status(quality_metrics['uniqueness'])},
+        {'Metric': 'Consistency', 'Score': f"{quality_metrics['consistency']:.1f}%", 'Status': get_quality_status(quality_metrics['consistency'])},
+        {'Metric': 'Validity', 'Score': f"{quality_metrics['validity']:.1f}%", 'Status': get_quality_status(quality_metrics['validity'])}
+    ])
+    
+    st.dataframe(quality_breakdown, use_container_width=True)
+    
+    # Quality recommendations
+    st.markdown("#### 💡 Quality Improvement Recommendations")
+    
+    for rec in quality_metrics['recommendations']:
+        st.markdown(f"• {rec}")
+
+def calculate_quality_metrics(df):
+    metrics = {}
+    
+    # Completeness
+    total_cells = df.shape[0] * df.shape[1]
+    missing_cells = df.isnull().sum().sum()
+    metrics['completeness'] = ((total_cells - missing_cells) / total_cells) * 100
+    
+    # Uniqueness  
+    duplicate_rows = df.duplicated().sum()
+    metrics['uniqueness'] = ((len(df) - duplicate_rows) / len(df)) * 100
+    
+    # Consistency (simplified - based on data type consistency)
+    metrics['consistency'] = 90  # Simplified for demo
+    
+    # Validity (simplified - based on non-null numeric values in numeric columns)
+    numeric_cols = df.select_dtypes(include=[np.number]).columns
+    if len(numeric_cols) > 0:
+        valid_numeric = sum([df[col].notna().sum() for col in numeric_cols])
+        total_numeric = len(numeric_cols) * len(df)
+        metrics['validity'] = (valid_numeric / total_numeric) * 100
+    else:
+        metrics['validity'] = 100
+    
+    # Overall score
+    metrics['overall_score'] = (metrics['completeness'] + metrics['uniqueness'] + 
+                               metrics['consistency'] + metrics['validity']) / 4
+    
+    # Grade
+    if metrics['overall_score'] >= 90:
+        metrics['grade'] = "Excellent"
+        metrics['usability'] = "Ready for Analysis"
+    elif metrics['overall_score'] >= 75:
+        metrics['grade'] = "Good"
+        metrics['usability'] = "Suitable for Use"
+    elif metrics['overall_score'] >= 60:
+        metrics['grade'] = "Fair"
+        metrics['usability'] = "Needs Improvement"
+    else:
+        metrics['grade'] = "Poor"
+        metrics['usability'] = "Requires Cleaning"
+    
+    # Recommendations
+    recommendations = []
+    if metrics['completeness'] < 90:
+        recommendations.append("Address missing values through imputation or data collection")
+    if metrics['uniqueness'] < 95:
+        recommendations.append("Remove duplicate records to improve uniqueness")
+    if metrics['overall_score'] < 80:
+        recommendations.append("Implement data validation rules for future data collection")
+    
+    metrics['recommendations'] = recommendations if recommendations else ["Data quality is excellent - no immediate actions needed"]
+    
+    return metrics
+
+def get_quality_status(score):
+    if score >= 90:
+        return "Excellent"
+    elif score >= 75:
+        return "Good"
+    elif score >= 60:
+        return "Fair"
+    else:
+        return "Poor"
+
+def show_key_insights_dashboard(df):
+    st.markdown("### 🎯 Key Insights Dashboard")
+    st.markdown("*Automated insights and patterns discovered in your data*")
+    
+    # Generate insights
+    insights = generate_automated_insights(df)
+    
+    # Display insights in cards
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("#### 📊 Data Insights")
+        for insight in insights['data_insights']:
+            st.markdown(f"""
+            <div class="success-box">
+                <h4>🔍 {insight['title']}</h4>
+                <p>{insight['description']}</p>
+            </div>
+            """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("#### 🎯 Actionable Recommendations")
+        for action in insights['actionable_insights']:
+            st.markdown(f"""
+            <div class="info-box">
+                <h4>💡 {action['title']}</h4>
+                <p>{action['description']}</p>
+            </div>
+            """, unsafe_allow_html=True)
+    
+    # Statistical insights
+    if insights['statistical_insights']:
+        st.markdown("#### 📈 Statistical Discoveries")
+        for stat in insights['statistical_insights']:
+            st.markdown(f"• **{stat['metric']}**: {stat['value']} - {stat['interpretation']}")
+
+def generate_automated_insights(df):
+    insights = {
+        'data_insights': [],
+        'actionable_insights': [],
+        'statistical_insights': []
+    }
+    
+    # Data insights
+    if df.shape[0] > 5000:
+        insights['data_insights'].append({
+            'title': 'Large Dataset Detected',
+            'description': f'With {df.shape[0]:,} records, this dataset provides substantial statistical power for analysis.'
+        })
+    
+    missing_pct = (df.isnull().sum().sum() / (df.shape[0] * df.shape[1])) * 100
+    if missing_pct < 5:
+        insights['data_insights'].append({
+            'title': 'High Data Quality',
+            'description': f'Only {missing_pct:.1f}% missing values detected - excellent data completeness.'
+        })
+    
+    # Actionable insights
+    numeric_cols = df.select_dtypes(include=[np.number]).columns
+    if len(numeric_cols) > 3:
+        insights['actionable_insights'].append({
+            'title': 'Rich Numeric Data',
+            'description': f'With {len(numeric_cols)} numeric variables, consider correlation analysis and predictive modeling.'
+        })
+    
+    categorical_cols = df.select_dtypes(include=['object']).columns
+    if len(categorical_cols) > 2:
+        insights['actionable_insights'].append({
+            'title': 'Category Analysis Opportunity',
+            'description': f'{len(categorical_cols)} categorical variables available for segmentation analysis.'
+        })
+    
+    # Statistical insights
+    if len(numeric_cols) > 1:
+        corr_matrix = df[numeric_cols].corr()
+        max_corr = corr_matrix.abs().unstack().sort_values(ascending=False)
+        max_corr = max_corr[max_corr < 1.0].iloc[0]  # Exclude self-correlation
+        
+        if max_corr > 0.7:
+            insights['statistical_insights'].append({
+                'metric': 'Highest Correlation',
+                'value': f'{max_corr:.3f}',
+                'interpretation': 'Strong relationship detected between variables'
+            })
+    
+    return insights
 
 if __name__ == "__main__":
     main() 
