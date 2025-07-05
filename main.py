@@ -90,7 +90,7 @@ COLOR_PALETTES = {
 }
 
 def main():
-    st.markdown('<h1 class="main-header">🎨 DataViz Pro - Data Visualization</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">🎨 Data Analytics Dashboard</h1>', unsafe_allow_html=True)
     st.markdown("### 🌟 Transform your data into stunning visual stories!")
     
     # Sidebar for navigation
