@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')
 
 # Set page config
 st.set_page_config(
-    page_title="DataViz Pro - Data Visualization Dashboard",
+    page_title="Data Analytics Dashboard",
     page_icon="🎨",
     layout="wide",
     initial_sidebar_state="expanded"
