@@ -166,7 +166,7 @@ def show_home():
         st.markdown("""
         <div class="feature-card">
             <h3>🤖 Machine Learning</h3>
-            <p>Build and train powerful ML models with Linear Regression, K-Means Clustering, and Logistic Regression.</p>
+            <p>Build and train powerful ML models with Linear Regression, Decision Trees, Random Forest, Clustering, and PCA.</p>
         </div>
         """, unsafe_allow_html=True)
     
